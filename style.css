@@ -77,6 +77,7 @@ body {
     font-weight: 500;
     color: var(--mist);
     text-decoration: none;
+    padding: 0.5rem 0.25rem;
     transition: color 0.15s ease;
 }
 
@@ -430,6 +431,79 @@ body {
     color: var(--mist);
     margin-top: 1rem;
     opacity: 0.6;
+}
+
+/* ============================================
+   FAQ (dark section)
+   ============================================ */
+.faq {
+    padding: 6rem 2rem;
+}
+
+.faq-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-item {
+    border-top: 1px solid var(--slate);
+    padding: 0;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid var(--slate);
+}
+
+.faq-item summary {
+    font-family: var(--font-head);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--sand);
+    cursor: pointer;
+    padding: 1.25rem 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    color: var(--mist);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.faq-item[open] summary::after {
+    content: '−';
+    color: var(--lime);
+}
+
+.faq-item summary:hover { color: var(--lime); }
+
+.faq-item summary:focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 4px;
+}
+
+.faq-item p {
+    font-size: 0.9375rem;
+    color: var(--mist);
+    line-height: 1.7;
+    max-width: 50ch;
+    padding: 0 0 1.25rem;
 }
 
 /* ============================================
