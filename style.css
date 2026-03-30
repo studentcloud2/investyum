@@ -446,18 +446,25 @@ body {
 }
 
 .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .faq-item {
-    border-top: 1px solid var(--slate);
+    background: var(--slate);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     padding: 0;
+    transition: border-color 0.3s ease;
 }
 
-.faq-item:last-child {
-    border-bottom: 1px solid var(--slate);
+.faq-item:hover {
+    border-color: rgba(196, 245, 80, 0.15);
+}
+
+.faq-item[open] {
+    border-color: rgba(196, 245, 80, 0.2);
 }
 
 .faq-item summary {
@@ -466,11 +473,12 @@ body {
     font-weight: 500;
     color: var(--sand);
     cursor: pointer;
-    padding: 1.25rem 0;
+    padding: 1.25rem 1.5rem;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     transition: color 0.2s ease;
 }
 
@@ -479,31 +487,46 @@ body {
 .faq-item summary::after {
     content: '+';
     font-family: var(--font-mono);
-    font-size: 1.25rem;
+    font-size: 0.875rem;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--mist);
+    border-radius: 50%;
     color: var(--mist);
-    transition: transform 0.3s ease;
     flex-shrink: 0;
-    margin-left: 1rem;
+    transition: all 0.3s ease;
 }
 
 .faq-item[open] summary::after {
     content: '−';
-    color: var(--lime);
+    color: var(--ink);
+    background: var(--lime);
+    border-color: var(--lime);
 }
 
 .faq-item summary:hover { color: var(--lime); }
+.faq-item summary:hover::after { border-color: var(--lime); color: var(--lime); }
 
 .faq-item summary:focus-visible {
     outline: 2px solid var(--lime);
-    outline-offset: 4px;
+    outline-offset: 2px;
 }
 
 .faq-item p {
     font-size: 0.9375rem;
     color: var(--mist);
     line-height: 1.7;
-    max-width: 50ch;
-    padding: 0 0 1.25rem;
+    max-width: 55ch;
+    padding: 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .faq-list {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* ============================================
