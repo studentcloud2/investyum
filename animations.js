@@ -5,13 +5,10 @@
     var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mq.matches) return;
 
-    // --- Scroll Reveal ---
+    // --- Scroll Reveal (observes .reveal classes already in HTML) ---
     function initReveal() {
-        var els = document.querySelectorAll(
-            '.hero-inner, .hero-geo, .proof-inner, .services-inner, ' +
-            '.service-card, .approach-inner, .step, .about-inner, .contact-inner'
-        );
-        els.forEach(function (el) { el.classList.add('reveal'); });
+        var els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
 
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {

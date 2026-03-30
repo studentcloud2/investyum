@@ -415,6 +415,10 @@ body {
     gap: 1rem;
 }
 
+.email-cta:active {
+    transform: scale(0.98);
+}
+
 .email-cta:focus-visible {
     outline: 2px solid var(--lime);
     outline-offset: 4px;
@@ -465,15 +469,25 @@ footer {
 }
 
 /* ============================================
-   SCROLL REVEAL
+   SVG WORDMARK TEXT
    ============================================ */
-.reveal {
+.wordmark-text {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+/* ============================================
+   SCROLL REVEAL (scoped under .js to prevent FOIC)
+   ============================================ */
+.js .reveal {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -496,11 +510,23 @@ footer {
     .proof, .services, .approach, .about, .contact { padding-left: 4rem; padding-right: 4rem; }
 }
 
-/* Mobile nav */
+/* Mobile */
 @media (max-width: 600px) {
-    .nav-links { gap: 1rem; }
+    .nav { padding: 1rem 1rem; }
+    .nav-links { gap: 0.75rem; }
     .nav-links a { font-size: 0.8125rem; }
+    .wordmark { height: 22px; }
     .hero-headline { font-size: clamp(1.875rem, 7vw, 2.5rem); }
+    .hero-headline br { display: none; }
+    .section-headline br { display: none; }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+    .nav { padding: 0.75rem 0.75rem; }
+    .nav-links { gap: 0.5rem; }
+    .nav-links a { font-size: 0.75rem; }
+    .wordmark { height: 18px; }
 }
 
 /* ============================================
@@ -512,7 +538,7 @@ footer {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
-    .reveal {
+    .js .reveal {
         opacity: 1;
         transform: none;
     }
