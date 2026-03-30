@@ -367,9 +367,11 @@ body {
 }
 
 /* ============================================
-   CONTACT (dark section)
+   CONTACT (light section)
    ============================================ */
 .contact {
+    background: var(--paper);
+    color: var(--ink);
     padding: 6rem 2rem 4rem;
     text-align: center;
 }
@@ -379,11 +381,13 @@ body {
     margin: 0 auto;
 }
 
+.contact .meta { color: var(--ink); opacity: 0.3; }
+
 .contact-headline {
     font-family: var(--font-head);
     font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--sand);
+    color: var(--ink);
     margin-bottom: 1rem;
 }
 
@@ -396,10 +400,10 @@ body {
 .email-cta {
     font-family: var(--font-mono);
     font-size: 1.125rem;
-    color: var(--sand);
+    color: var(--ink);
     text-decoration: none;
     padding: 1rem 2.5rem;
-    border: 2px solid var(--lime);
+    border: 2px solid var(--ink);
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -407,8 +411,8 @@ body {
 }
 
 .email-cta:hover {
-    background: var(--lime);
-    color: var(--ink);
+    background: var(--ink);
+    color: var(--paper);
     gap: 1rem;
 }
 
@@ -430,16 +434,11 @@ body {
 }
 
 /* ============================================
-   FAQ (light section — between About dark + Contact light)
+   FAQ (dark section)
    ============================================ */
 .faq {
-    background: var(--paper);
-    color: var(--ink);
     padding: 6rem 2rem;
 }
-
-.faq .meta { color: var(--ink); opacity: 0.3; }
-.faq .section-headline { color: var(--ink); }
 
 .faq-inner {
     max-width: 900px;
@@ -453,19 +452,19 @@ body {
 }
 
 .faq-item {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--slate);
     padding: 0;
 }
 
 .faq-item:last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--slate);
 }
 
 .faq-item summary {
     font-family: var(--font-head);
     font-size: 1.0625rem;
     font-weight: 500;
-    color: var(--ink);
+    color: var(--sand);
     cursor: pointer;
     padding: 1.25rem 0;
     list-style: none;
@@ -489,10 +488,10 @@ body {
 
 .faq-item[open] summary::after {
     content: '−';
-    color: var(--ink);
+    color: var(--lime);
 }
 
-.faq-item summary:hover { color: var(--mist); }
+.faq-item summary:hover { color: var(--lime); }
 
 .faq-item summary:focus-visible {
     outline: 2px solid var(--lime);
