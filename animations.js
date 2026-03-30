@@ -1,15 +1,17 @@
-// InvestYum — Scroll reveals + ambient glow parallax (no GSAP)
-
+// Investyum v2 — Minimal animations: scroll reveal, count-up metrics, sticky nav
 (function () {
     'use strict';
 
-    // Scroll-triggered reveal for services and CTA
-    function initScrollReveal() {
-        var targets = document.querySelectorAll(
-            '.section-label, .service-card, .cta'
-        );
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) return;
 
-        if (!targets.length) return;
+    // --- Scroll Reveal ---
+    function initReveal() {
+        var els = document.querySelectorAll(
+            '.hero-inner, .hero-geo, .proof-inner, .services-inner, ' +
+            '.service-card, .approach-inner, .step, .about-inner, .contact-inner'
+        );
+        els.forEach(function (el) { el.classList.add('reveal'); });
 
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
@@ -18,32 +20,56 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.12 });
 
-        targets.forEach(function (el) {
-            observer.observe(el);
-        });
+        els.forEach(function (el) { observer.observe(el); });
     }
 
-    // Ambient glow follows mouse with smooth parallax
-    function initAmbientGlow() {
-        var glow = document.querySelector('.ambient-glow');
-        if (!glow) return;
+    // --- Count-Up Metrics ---
+    function initCountUp() {
+        var values = document.querySelectorAll('.metric-value[data-target]');
+        if (!values.length) return;
 
-        // Respect reduced motion
-        var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (mq.matches) return;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var el = entry.target;
+                var target = parseInt(el.getAttribute('data-target'), 10);
+                var duration = 1500;
+                var start = performance.now();
 
-        document.addEventListener('mousemove', function (e) {
-            var x = (e.clientX / window.innerWidth - 0.5) * 60;
-            var y = (e.clientY / window.innerHeight - 0.5) * 40;
-            glow.style.transform =
-                'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px))';
-        });
+                function tick(now) {
+                    var elapsed = now - start;
+                    var progress = Math.min(elapsed / duration, 1);
+                    // ease-out cubic
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    el.textContent = Math.round(eased * target);
+                    if (progress < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+                observer.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+
+        values.forEach(function (el) { observer.observe(el); });
+    }
+
+    // --- Sticky Nav ---
+    function initNav() {
+        var nav = document.querySelector('.nav');
+        if (!nav) return;
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 80) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        initScrollReveal();
-        initAmbientGlow();
+        initReveal();
+        initCountUp();
+        initNav();
     });
 })();

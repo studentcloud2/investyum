@@ -3,104 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InvestYum — Strategic Consulting</title>
-    <meta name="description" content="Technology and strategy consulting for fintechs, brokerages, and digital businesses across Southeast Asia. AI transformation, product engineering, and growth advisory.">
+    <title>Investyum — AI &amp; Product Engineering for SEA Fintechs</title>
+    <meta name="description" content="AI transformation, product engineering, and growth advisory for fintechs, brokerages, and digital businesses across Southeast Asia. Active since 2025.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24' fill='%23C4F550'>Y</text></svg>">
 </head>
 <body>
-    <!-- SVG Noise Filter (referenced by CSS) -->
-    <svg class="sr-only" aria-hidden="true">
-        <filter id="noise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
-            <feColorMatrix type="saturate" values="0"/>
-        </filter>
-    </svg>
 
-    <!-- Ambient Glow -->
-    <div class="ambient-glow" aria-hidden="true"></div>
-
-    <!-- Noise Overlay -->
-    <div class="noise-overlay" aria-hidden="true"></div>
+    <!-- Navigation -->
+    <nav class="nav" aria-label="Main navigation">
+        <a href="#" class="nav-logo" aria-label="Investyum home">
+            <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg" class="wordmark" aria-hidden="true">
+                <line x1="8" y1="32" x2="20" y2="8" stroke="#C4F550" stroke-width="3" stroke-linecap="round"/>
+                <line x1="32" y1="8" x2="20" y2="32" stroke="#E8E4D9" stroke-width="3" stroke-linecap="round"/>
+                <text x="42" y="28" font-family="Space Grotesk" font-weight="700" font-size="20" fill="#E8E4D9" letter-spacing="-0.5">investyum</text>
+            </svg>
+        </a>
+        <div class="nav-links">
+            <a href="#services">Work</a>
+            <a href="#approach">Approach</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+        </div>
+    </nav>
 
     <main>
-        <!-- Hero Section -->
+
+        <!-- HERO -->
         <section class="hero" aria-label="Introduction">
-            <div class="hero-content">
-                <!-- Animated SVG Logo -->
-                <div class="logo-container" aria-label="InvestYum logo">
-                    <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="InvestYum hexagonal logo">
-                        <defs>
-                            <linearGradient id="gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#C8A951"/>
-                                <stop offset="50%" stop-color="#F7EF8A"/>
-                                <stop offset="100%" stop-color="#C8A951"/>
-                            </linearGradient>
-                        </defs>
-                        <!-- Outer Hexagon -->
-                        <polygon class="hex-outer" points="60,5 110,30 110,90 60,115 10,90 10,30" fill="none" stroke="url(#gold-foil)" stroke-width="1.5"/>
-                        <!-- Inner Hexagon -->
-                        <polygon class="hex-inner" points="60,20 95,38 95,82 60,100 25,82 25,38" fill="none" stroke="url(#gold-foil)" stroke-width="0.8" opacity="0.4"/>
-                        <!-- Y Letterform -->
-                        <line class="y-left" x1="40" y1="38" x2="60" y2="62" stroke="url(#gold-foil)" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="y-right" x1="80" y1="38" x2="60" y2="62" stroke="url(#gold-foil)" stroke-width="2.5" stroke-linecap="round"/>
-                        <line class="y-stem" x1="60" y1="62" x2="60" y2="85" stroke="url(#gold-foil)" stroke-width="2.5" stroke-linecap="round"/>
-                        <!-- Accent Dot -->
-                        <circle class="accent-dot" cx="60" cy="26" r="3" fill="#C8A951"/>
-                    </svg>
-                </div>
-
-                <h1 class="brand">
-                    <span class="brand-word">Invest</span><span class="brand-word brand-accent">Yum</span>
+            <div class="hero-inner">
+                <p class="meta">[FIRM_EST: 2025]</p>
+                <h1 class="hero-headline">
+                    We build the technology<br>
+                    that moves Southeast Asia's<br>
+                    <span class="accent">financial markets.</span>
                 </h1>
+                <p class="hero-sub">AI transformation, product engineering, and growth advisory for fintechs that refuse to stay small.</p>
+                <a href="#contact" class="text-cta">Start a conversation <span class="arrow">&rarr;</span></a>
+            </div>
+            <p class="hero-geo">Singapore &middot; Jakarta &middot; Remote</p>
+        </section>
 
-                <p class="headline">Technology &amp; Strategy Consulting<br>for Southeast Asia's Fastest-Moving Companies</p>
-
-                <div class="divider" aria-hidden="true"></div>
+        <!-- PROOF -->
+        <section class="proof" aria-label="Results">
+            <div class="proof-inner">
+                <p class="meta">[DATA_SINCE: 2025]</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="metric-value" data-target="6">0</span>
+                        <span class="metric-label">Markets served<br>across ASEAN</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value metric-prefix-dollar" data-target="120">0</span>
+                        <span class="metric-suffix">M+</span>
+                        <span class="metric-label">Pipeline<br>influenced</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value" data-target="8">0</span>
+                        <span class="metric-suffix">weeks</span>
+                        <span class="metric-label">Avg. engagement<br>length</span>
+                    </div>
+                </div>
+                <p class="proof-note">We don't show logos. Our clients in brokerage, mobility, and ecommerce operate in markets where discretion is the standard. The numbers speak instead.</p>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="services" aria-label="Our services">
-            <p class="section-label">What We Do</p>
-            <div class="services-grid">
-                <article class="service-card">
-                    <span class="service-number">01</span>
-                    <h2 class="service-title">AI Transformation</h2>
-                    <p class="service-desc">Production AI systems for financial services — from intelligent document processing to trading signal pipelines. Not prototypes. Deployed products.</p>
-                </article>
-                <article class="service-card">
-                    <span class="service-number">02</span>
-                    <h2 class="service-title">Product &amp; Engineering</h2>
-                    <p class="service-desc">End-to-end product builds for fintechs, brokerages, mobility, and e-commerce. Strategy through shipping — we own the outcome.</p>
-                </article>
-                <article class="service-card">
-                    <span class="service-number">03</span>
-                    <h2 class="service-title">Growth Advisory</h2>
-                    <p class="service-desc">Market entry, unit economics, and scaling playbooks for companies expanding across Southeast Asia's fragmented markets.</p>
-                </article>
+        <!-- SERVICES -->
+        <section id="services" class="services" aria-label="Services">
+            <div class="services-inner">
+                <p class="meta">[CORE_SERVICES]</p>
+                <h2 class="section-headline">Three ways we make fintechs<br>harder to compete with.</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="meta">[SERVICE_01]</span>
+                        <h3>AI Transformation</h3>
+                        <p>We audit your data stack, identify where machine learning creates leverage — not theater — and build production systems that compound. Trade classification, fraud detection, recommendation engines. Built for your regulatory reality.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="meta">[SERVICE_02]</span>
+                        <h3>Product &amp; Engineering</h3>
+                        <p>End-to-end for brokerages, mobility platforms, and ecommerce. We've shipped trading platforms, payment systems, and growth infrastructure across ASEAN. We write code. We don't just make slides about it.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="meta">[SERVICE_03]</span>
+                        <h3>Growth Advisory</h3>
+                        <p>Market entry for Southeast Asia. We know which regulators will return your call, which payment rails actually work, and which markets are 18 months from inflection. We've done the homework you can't Google.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta" aria-label="Contact">
-            <div class="status-badge">
-                <span class="status-dot" aria-hidden="true"></span>
-                <span>Active across SEA</span>
+        <!-- APPROACH -->
+        <section id="approach" class="approach" aria-label="How we work">
+            <div class="approach-inner">
+                <p class="meta">[PROCESS_V2]</p>
+                <h2 class="section-headline">No 90-slide decks.<br>No six-month timelines.</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <h3>Diagnose in days, not quarters.</h3>
+                        <p>We spend the first week inside your systems, your data, your team. Not interviewing stakeholders in conference rooms. We read your codebase before we read your org chart.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <h3>Build with your team, not instead of them.</h3>
+                        <p>We embed. Your engineers ship alongside ours. When we leave, capability stays. We've seen too many firms create dependency by design. We do the opposite.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <h3>Measure what moved.</h3>
+                        <p>Every engagement has a number attached before we start. Revenue, latency, conversion, AUM — something real. If we can't agree on what success looks like, we don't start.</p>
+                    </div>
+                </div>
             </div>
-            <p class="cta-headline">Working with fintechs who ship.</p>
-            <p class="cta-sub">Limited engagements. Reach out directly.</p>
-            <a href="mailto:investyum@gmail.com" class="cta-email">
-                <span>investyum@gmail.com</span>
-                <span class="arrow" aria-hidden="true">&rarr;</span>
-            </a>
         </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about" aria-label="About Investyum">
+            <div class="about-inner">
+                <p class="meta">[TEAM_INFO]</p>
+                <h2 class="section-headline">Southeast Asia natives.<br>Not tourists.</h2>
+                <div class="about-body">
+                    <p>Investyum was founded in 2025 by operators who spent years building financial products across Indonesia, Singapore, and the wider ASEAN region.</p>
+                    <p>We started this firm because we kept seeing the same pattern: global consultancies flying in, billing premium rates, and delivering advice that ignored local market physics.</p>
+                    <p>We're a small team on purpose. Every engagement is led by someone who has shipped product in this region — not a junior associate reading from a framework.</p>
+                </div>
+                <p class="about-geo">Based in Jakarta and Singapore. Working across ASEAN.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact" aria-label="Get in touch">
+            <div class="contact-inner">
+                <p class="meta">[CONTACT_DIRECT]</p>
+                <h2 class="contact-headline">Have a problem worth solving?</h2>
+                <p class="contact-sub">We respond within 24 hours. No intake forms. No chatbots. Just a conversation.</p>
+                <a href="mailto:investyum@gmail.com" class="email-cta">investyum@gmail.com <span class="arrow">&rarr;</span></a>
+                <p class="gmail-note">Custom domain in progress. Results aren't.</p>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 InvestYum. All rights reserved.</p>
+        <div class="footer-inner">
+            <span class="footer-brand">investyum</span>
+            <span class="footer-geo">Singapore &middot; Jakarta &middot; Remote</span>
+            <span class="footer-copy">&copy; 2025&ndash;2026</span>
+        </div>
     </footer>
 
     <script src="animations.js"></script>
